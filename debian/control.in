@@ -26,7 +26,6 @@ Architecture: any
 Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Suggests: libproxy-plugins
 Description: automatic proxy configuration management library (shared)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -58,14 +57,3 @@ Description: automatic proxy configuration management library (python)
  applications proxy-aware with a simple and stable API.
  .
  This package contains the Python bindings.
-
-Package: libproxy-plugins
-Architecture: any
-Section: libs
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
-Description: automatic proxy configuration management library (plugins)
- libproxy is a lightweight library which makes it easy to develop
- applications proxy-aware with a simple and stable API.
- .
- This package contains the plugins for the shared library.

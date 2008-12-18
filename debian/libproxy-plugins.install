@@ -1,5 +1,0 @@
-debian/tmp/usr/lib/libproxy/*/plugins/gnome.so
-debian/tmp/usr/lib/libproxy/*/plugins/kde.so
-debian/tmp/usr/lib/libproxy/*/plugins/networkmanager.so
-debian/tmp/usr/lib/libproxy/*/plugins/mozjs.so
-debian/tmp/usr/lib/libproxy/*/plugins/webkit.so

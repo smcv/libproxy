@@ -1,3 +1,2 @@
 debian/tmp/usr/lib/libproxy.so.*
-debian/tmp/usr/lib/libproxy/*/plugins/envvar.so
-debian/tmp/usr/lib/libproxy/*/plugins/file.so
+debian/tmp/usr/lib/libproxy/*/plugins
