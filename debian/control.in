@@ -1,0 +1,68 @@
+Source: libproxy
+Section: libs
+Priority: optional
+Maintainer: Emilio Pozuelo Monfort <pochu@ubuntu.com>
+Uploaders: @GNOME_TEAM@
+Build-Depends: cdbs,
+               debhelper (>= 5),
+               gnome-pkg-tools,
+               autotools-dev,
+               python-all-dev,
+               python-support,
+               libdbus-1-dev,
+               libwebkit-dev,
+               xulrunner-dev,
+               libgconf2-dev,
+               libxmu-dev
+Standards-Version: 3.8.0
+XS-Python-Version: >= 2.5
+Homepage: http://code.google.com/p/libproxy/
+
+Package: libproxy0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: libproxy-plugins
+Description: automatic proxy configuration management library (shared)
+ libproxy is a lightweight library which makes it easy to develop
+ applications proxy-aware with a simple and stable API.
+ .
+ This package contains the shared library.
+
+Package: libproxy-dev
+Architecture: all
+Section: libdevel
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libproxy0 (>= ${source:Version})
+Description: automatic proxy configuration management library (devel)
+ libproxy is a lightweight library which makes it easy to develop
+ applications proxy-aware with a simple and stable API.
+ .
+ This package contains the development files.
+
+Package: python-libproxy
+Architecture: all
+Section: python
+XB-Python-Version: ${python:Versions}
+Depends: ${python:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends},
+         libproxy0 (>= ${source:Version})
+Description: automatic proxy configuration management library (python)
+ libproxy is a lightweight library which makes it easy to develop
+ applications proxy-aware with a simple and stable API.
+ .
+ This package contains the Python bindings.
+
+Package: libproxy-plugins
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: automatic proxy configuration management library (plugins)
+ libproxy is a lightweight library which makes it easy to develop
+ applications proxy-aware with a simple and stable API.
+ .
+ This package contains the plugins for the shared library.
