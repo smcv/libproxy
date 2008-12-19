@@ -44,6 +44,18 @@ Description: automatic proxy configuration management library (devel)
  .
  This package contains the development files.
 
+Package: libproxy-tools
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: automatic proxy configuration management library (tools)
+ libproxy is a lightweight library which makes it easy to develop
+ applications proxy-aware with a simple and stable API.
+ .
+ This package contains a program to interact with libproxy from the
+ command line.
+
 Package: python-libproxy
 Architecture: all
 Section: python
