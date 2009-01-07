@@ -8,7 +8,7 @@ include /usr/share/cdbs/1/class/gnome.mk
 include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
 -include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
 
-SHLIBVER := 0.2.3-1
+SHLIBVER := 0.2.3
 libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+)[[:space:]]*$$/\1/p' debian/control)
 
 DEB_DH_MAKESHLIBS_ARGS_$(libproxy) = -V '$(libproxy) (>= $(SHLIBVER))'
