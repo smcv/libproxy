@@ -61,7 +61,6 @@ Architecture: all
 Section: python
 XB-Python-Version: ${python:Versions}
 Depends: ${python:Depends},
-         ${shlibs:Depends},
          ${misc:Depends},
          libproxy0 (>= ${source:Version})
 Description: automatic proxy configuration management library (python)

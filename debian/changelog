@@ -6,5 +6,6 @@ libproxy (0.2.3-1) UNRELEASED; urgency=low
   [ Loic Minier ]
   * Set libproxy-dev Arch: any; too small win to warrant installability issues
     on slow arches.
+  * Drop shlibs:Depends from python-libproxy as it's Arch: all.
 
  -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Wed, 17 Dec 2008 23:25:40 +0100
