@@ -14,5 +14,8 @@ libproxy (0.2.3-1) UNRELEASED; urgency=low
     - New patch, 70_autotools, split autotools generated files here to force
       them to be applied last and avoid timestamp skews issues.
     Thanks Sébastien Bacher and Ubuntu for the above.
+  * New patch, 50_px-wpad-fallback-env-var, check PX_WPAD_FALLBACK env var to
+    decide whether to fall back to wpad:// style autodetection or not,
+    defaulting to not fallback when the env var isn't set.
 
  -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Wed, 17 Dec 2008 23:25:40 +0100
