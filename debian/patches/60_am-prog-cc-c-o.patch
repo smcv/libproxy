@@ -1,0 +1,11 @@
+diff -Nur -x '*.orig' -x '*~' libproxy-0.2.3/configure.ac libproxy-0.2.3.new/configure.ac
+--- libproxy-0.2.3/configure.ac	2009-01-08 11:09:37.000000000 +0100
++++ libproxy-0.2.3.new/configure.ac	2009-01-08 11:10:21.000000000 +0100
+@@ -6,6 +6,7 @@
+ ### Checks for programs.
+ AC_PROG_CC
+ AC_PROG_CPP
++AM_PROG_CC_C_O
+ AC_PROG_INSTALL
+ AC_PROG_LIBTOOL
+ AC_PROG_LN_S
