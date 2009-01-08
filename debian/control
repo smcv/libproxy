@@ -33,11 +33,11 @@ Description: automatic proxy configuration management library (shared)
  This package contains the shared library.
 
 Package: libproxy-dev
-Architecture: all
+Architecture: any
 Section: libdevel
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libproxy0 (>= ${source:Version})
+         libproxy0 (= ${binary:Version})
 Description: automatic proxy configuration management library (devel)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.

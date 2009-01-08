@@ -1,5 +1,10 @@
 libproxy (0.2.3-1) UNRELEASED; urgency=low
 
+  [ Emilio Pozuelo Monfort ]
   * Initial release (Closes: #509063).
+
+  [ Loic Minier ]
+  * Set libproxy-dev Arch: any; too small win to warrant installability issues
+    on slow arches.
 
  -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Wed, 17 Dec 2008 23:25:40 +0100
