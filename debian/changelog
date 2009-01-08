@@ -9,5 +9,8 @@ libproxy (0.2.3-1) UNRELEASED; urgency=low
   * Drop shlibs:Depends from python-libproxy as it's Arch: all.
   * Drop gnome-get-source.mk include as it's not working by default.
   * Rename patch configure_check_for_dbus to 10_configure-check-for-dbus.
+  * Run a full autoreconf instead of only autoconf and split autotools
+    generated files in a new patch, 70_autotools, thanks Sébastien Bacher and
+    Ubuntu.
 
  -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Wed, 17 Dec 2008 23:25:40 +0100
