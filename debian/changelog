@@ -1,4 +1,4 @@
-libproxy (0.2.3-1) UNRELEASED; urgency=low
+libproxy (0.2.3-1) unstable; urgency=low
 
   [ Emilio Pozuelo Monfort ]
   * Initial release (Closes: #509063).
@@ -21,4 +21,4 @@ libproxy (0.2.3-1) UNRELEASED; urgency=low
   [ Emilio Pozuelo Monfort ]
   * Fix if/else logic in and a wrong free in 50_px-wpad-fallback-env-var.
 
- -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Wed, 17 Dec 2008 23:25:40 +0100
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Tue, 03 Mar 2009 00:45:10 +0100
