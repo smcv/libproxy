@@ -1,7 +1,7 @@
-diff -Nur -x '*.orig' -x '*~' libproxy-0.2.3/src/lib/proxy_factory.c libproxy-0.2.3.new/src/lib/proxy_factory.c
+diff -ruNp libproxy-0.2.3/src/lib/proxy_factory.c libproxy-0.2.3.new/src/lib/proxy_factory.c
 --- libproxy-0.2.3/src/lib/proxy_factory.c	2008-06-05 22:56:15.000000000 +0200
-+++ libproxy-0.2.3.new/src/lib/proxy_factory.c	2009-01-08 11:33:28.000000000 +0100
-@@ -514,6 +514,8 @@
++++ libproxy-0.2.3.new/src/lib/proxy_factory.c	2009-03-03 00:37:14.000000000 +0100
+@@ -514,6 +514,8 @@ px_proxy_factory_get_proxies (pxProxyFac
  	pxConfig *config   = NULL;
  	char    **response = px_strsplit("direct://", ";");
  	char     *tmp = NULL, *order = NULL, **orderv = NULL;
@@ -10,7 +10,7 @@ diff -Nur -x '*.orig' -x '*~' libproxy-0.2.3/src/lib/proxy_factory.c libproxy-0.
  	
  	// Verify some basic stuff
  	if (!self)                    goto do_return;
-@@ -581,9 +583,27 @@
+@@ -581,9 +583,24 @@ px_proxy_factory_get_proxies (pxProxyFac
  	for (int i=0 ; self->configs && self->configs[i] && !config ; i++)
  		config = self->configs[i]->callback(self);
  	
@@ -19,13 +19,10 @@ diff -Nur -x '*.orig' -x '*~' libproxy-0.2.3/src/lib/proxy_factory.c libproxy-0.
 +	wpad_fallback_env = getenv("PX_WPAD_FALLBACK");
 +	if (wpad_fallback_env)
 +	{
-+		if (!strcmp(wpad_fallback_env, "0")) {
-+			do_wpad_fallback = 0;
-+		} else if (!strcmp(wpad_fallback_env, "0")) {
++		if (strcmp(wpad_fallback_env, "0")) {
 +			do_wpad_fallback = 1;
 +		}
 +	}
-+	px_free(wpad_fallback_env);
 +
  	// No plugin returned a valid config, fall back to 'wpad://'
  	if (!config)
@@ -38,15 +35,17 @@ diff -Nur -x '*.orig' -x '*~' libproxy-0.2.3/src/lib/proxy_factory.c libproxy-0.
  		fprintf(stderr, "*** Unable to locate valid config! Falling back to auto-detection...\n");
  		config         = px_malloc0(sizeof(pxConfig));
  		config->url    = px_strdup("wpad://");
-@@ -597,6 +617,11 @@
+@@ -591,7 +608,12 @@ px_proxy_factory_get_proxies (pxProxyFac
+ 	}
+ 	
+ 	// If the config plugin returned an invalid config type or malformed URL, fall back to 'wpad://'
+-	if (!(!strncmp(config->url, "http://", 7) || 
++	if (!do_wpad_fallback)
++	{
++		fprintf(stderr, "*** Config plugin returned invalid URL type and WPAD fallback disabled! Falling back to direct...\n");
++		goto do_return;
++	}
++	else if (!(!strncmp(config->url, "http://", 7) || 
+ 		  !strncmp(config->url, "socks://", 8) ||
+ 		  !strncmp(config->url, "pac+", 4) ||
  		  !strcmp (config->url, "wpad://") ||
- 		  !strcmp (config->url, "direct://")))
- 	{
-+		if (!do_wpad_fallback)
-+		{
-+			fprintf(stderr, "*** Config plugin returned invalid URL type and WPAD fallback disabled! Falling back to direct...\n");
-+			goto do_return;
-+		}
- 		fprintf(stderr, "*** Config plugin returned invalid URL type! Falling back to auto-detection...\n");
- 		px_free(config->url);
- 		config->url = px_strdup("wpad://");

@@ -18,4 +18,7 @@ libproxy (0.2.3-1) UNRELEASED; urgency=low
     decide whether to fall back to wpad:// style autodetection or not,
     defaulting to not fallback when the env var isn't set.
 
+  [ Emilio Pozuelo Monfort ]
+  * Fix if/else logic in and a wrong free in 50_px-wpad-fallback-env-var.
+
  -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Wed, 17 Dec 2008 23:25:40 +0100

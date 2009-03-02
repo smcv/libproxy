@@ -23,7 +23,6 @@ Homepage: http://code.google.com/p/libproxy/
 
 Package: libproxy0
 Architecture: any
-Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Description: automatic proxy configuration management library (shared)
@@ -46,7 +45,6 @@ Description: automatic proxy configuration management library (devel)
 
 Package: libproxy-tools
 Architecture: any
-Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Description: automatic proxy configuration management library (tools)

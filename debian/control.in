@@ -12,7 +12,6 @@ Build-Depends: cdbs,
                network-manager-dev,
                libdbus-1-dev,
                libwebkit-dev,
-               xulrunner-dev,
                libgconf2-dev,
                libxmu-dev
 Standards-Version: 3.8.0
@@ -23,7 +22,6 @@ Homepage: http://code.google.com/p/libproxy/
 
 Package: libproxy0
 Architecture: any
-Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Description: automatic proxy configuration management library (shared)
@@ -46,7 +44,6 @@ Description: automatic proxy configuration management library (devel)
 
 Package: libproxy-tools
 Architecture: any
-Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Description: automatic proxy configuration management library (tools)
