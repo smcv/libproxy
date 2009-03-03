@@ -2,6 +2,7 @@ libproxy (0.2.3-1) unstable; urgency=low
 
   [ Emilio Pozuelo Monfort ]
   * Initial release (Closes: #509063).
+  * Fix if/else logic and a wrong free in 50_px-wpad-fallback-env-var.
 
   [ Loic Minier ]
   * Set libproxy-dev Arch: any; too small win to warrant installability issues
@@ -18,7 +19,4 @@ libproxy (0.2.3-1) unstable; urgency=low
     decide whether to fall back to wpad:// style autodetection or not,
     defaulting to not fallback when the env var isn't set.
 
-  [ Emilio Pozuelo Monfort ]
-  * Fix if/else logic in and a wrong free in 50_px-wpad-fallback-env-var.
-
- -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Tue, 03 Mar 2009 00:45:10 +0100
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Tue, 03 Mar 2009 01:11:35 +0100
