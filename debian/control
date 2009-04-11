@@ -14,7 +14,7 @@ Build-Depends: cdbs,
                libwebkit-dev,
                libgconf2-dev,
                libxmu-dev
-Standards-Version: 3.8.0
+Standards-Version: 3.8.1
 XS-Python-Version: >= 2.5
 Vcs-Svn: svn://svn.debian.org/svn/pkg-gnome/packages/unstable/libproxy
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-gnome/packages/unstable/libproxy
