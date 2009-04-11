@@ -1,6 +1,5 @@
-diff -ruNp libproxy-0.2.3/src/lib/proxy_factory.c libproxy-0.2.3.new/src/lib/proxy_factory.c
---- libproxy-0.2.3/src/lib/proxy_factory.c	2008-06-05 22:56:15.000000000 +0200
-+++ libproxy-0.2.3.new/src/lib/proxy_factory.c	2009-03-03 00:37:14.000000000 +0100
+--- src/lib/proxy_factory.c.orig	2009-04-11 14:23:45.000000000 +0200
++++ src/lib/proxy_factory.c	2009-04-11 14:28:23.000000000 +0200
 @@ -514,6 +514,8 @@ px_proxy_factory_get_proxies (pxProxyFac
  	pxConfig *config   = NULL;
  	char    **response = px_strsplit("direct://", ";");
@@ -35,17 +34,30 @@ diff -ruNp libproxy-0.2.3/src/lib/proxy_factory.c libproxy-0.2.3.new/src/lib/pro
  		fprintf(stderr, "*** Unable to locate valid config! Falling back to auto-detection...\n");
  		config         = px_malloc0(sizeof(pxConfig));
  		config->url    = px_strdup("wpad://");
-@@ -591,7 +608,12 @@ px_proxy_factory_get_proxies (pxProxyFac
- 	}
- 	
- 	// If the config plugin returned an invalid config type or malformed URL, fall back to 'wpad://'
--	if (!(!strncmp(config->url, "http://", 7) || 
-+	if (!do_wpad_fallback)
-+	{
-+		fprintf(stderr, "*** Config plugin returned invalid URL type and WPAD fallback disabled! Falling back to direct...\n");
-+		goto do_return;
-+	}
-+	else if (!(!strncmp(config->url, "http://", 7) || 
+@@ -595,20 +612,23 @@ px_proxy_factory_get_proxies (pxProxyFac
  		  !strncmp(config->url, "socks://", 8) ||
  		  !strncmp(config->url, "pac+", 4) ||
  		  !strcmp (config->url, "wpad://") ||
+-		  !strcmp (config->url, "direct://")))
++		  !strcmp (config->url, "direct://"))
++		  && do_wpad_fallback)
+ 	{
+ 		fprintf(stderr, "*** Config plugin returned invalid URL type! Falling back to auto-detection...\n");
+ 		px_free(config->url);
+ 		config->url = px_strdup("wpad://");
+ 	}
+-	else if (!strncmp(config->url, "pac+", 4) && !px_url_is_valid(config->url + 4))
++	else if (!strncmp(config->url, "pac+", 4) && !px_url_is_valid(config->url + 4)
++		 && do_wpad_fallback)
+ 	{
+ 		fprintf(stderr, "*** Config plugin returned malformed URL! Falling back to auto-detection...\n");
+ 		px_free(config->url);
+ 		config->url = px_strdup("wpad://");
+ 	}
+ 	else if ((!strncmp(config->url, "http://", 7) || !strncmp(config->url, "socks://", 8)) && 
+-			  !px_url_is_valid(config->url))
++			  !px_url_is_valid(config->url) &&
++			  do_wpad_fallback)
+ 	{
+ 		fprintf(stderr, "*** Config plugin returned malformed URL! Falling back to auto-detection...\n");
+ 		px_free(config->url);

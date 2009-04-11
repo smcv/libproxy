@@ -1,3 +1,13 @@
+libproxy (0.2.3-2) UNRELEASED; urgency=low
+
+  * debian/patches/50_px-wpad-fallback-env-var.patch:
+    - Fix logic to not bypass the config plugin when the env variable
+      isn't set. We don't do wpad fallback if the env variable isn't set,
+      but there's not reason to ignore the config file if one is provided.
+      See https://launchpad.net/bugs/354475.
+
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Sat, 11 Apr 2009 14:31:53 +0200
+
 libproxy (0.2.3-1) unstable; urgency=low
 
   [ Emilio Pozuelo Monfort ]
