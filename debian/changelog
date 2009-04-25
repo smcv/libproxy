@@ -1,4 +1,4 @@
-libproxy (0.2.3-2) UNRELEASED; urgency=low
+libproxy (0.2.3-2) unstable; urgency=low
 
   * debian/patches/50_px-wpad-fallback-env-var.patch:
     - Fix logic to not bypass the config plugin when the env variable
@@ -6,8 +6,9 @@ libproxy (0.2.3-2) UNRELEASED; urgency=low
       but there's not reason to ignore the config file if one is provided.
       See https://launchpad.net/bugs/354475.
   * Standards-Version is 3.8.1, no changes needed.
+  * debian/copyright: Add copyright note for pacutils.js
 
- -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Sat, 11 Apr 2009 14:31:53 +0200
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Sat, 25 Apr 2009 14:25:10 +0200
 
 libproxy (0.2.3-1) unstable; urgency=low
 
