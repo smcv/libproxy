@@ -1,3 +1,10 @@
+libproxy (0.2.3-3) unstable; urgency=low
+
+  * Stop building the webkit plugin for now, we have a circular build-
+    dependency with webkit.
+
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Wed, 29 Apr 2009 19:50:07 +0200
+
 libproxy (0.2.3-2) unstable; urgency=low
 
   * debian/patches/50_px-wpad-fallback-env-var.patch:

@@ -11,7 +11,7 @@ Build-Depends: cdbs,
                python-support,
                network-manager-dev,
                libdbus-1-dev,
-               libwebkit-dev,
+#               libwebkit-dev,
                libgconf2-dev,
                libxmu-dev
 Standards-Version: 3.8.1
