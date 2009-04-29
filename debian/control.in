@@ -11,7 +11,7 @@ Build-Depends: cdbs,
                python-support,
                network-manager-dev,
                libdbus-1-dev,
-               xulrunner-dev,
+               libmozjs-dev,
 # we have a build-depends loop with webkit
 #               libwebkit-dev,
                libgconf2-dev,
