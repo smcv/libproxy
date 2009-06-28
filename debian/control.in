@@ -9,14 +9,14 @@ Build-Depends: cdbs,
                autotools-dev,
                python-all-dev,
                python-support,
-               network-manager-dev,
+               network-manager-dev [!hurd-i386 !kfreebsd-i386 !kfreebsd-amd64],
                libdbus-1-dev,
                libmozjs-dev,
 # we have a build-depends loop with webkit
 #               libwebkit-dev,
                libgconf2-dev,
                libxmu-dev
-Standards-Version: 3.8.1
+Standards-Version: 3.8.2
 XS-Python-Version: >= 2.5
 Vcs-Svn: svn://svn.debian.org/svn/pkg-gnome/packages/unstable/libproxy
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-gnome/packages/unstable/libproxy

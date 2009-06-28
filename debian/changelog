@@ -1,3 +1,11 @@
+libproxy (0.2.3-4) unstable; urgency=low
+
+  * Don't build NetworkManager support on non-Linux platforms. Thanks
+    Samuel Thibault. Closes: #534939.
+  * Standards-Version is 3.8.2, no changes needed.
+
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Sun, 28 Jun 2009 20:35:04 +0200
+
 libproxy (0.2.3-3) unstable; urgency=low
 
   * Stop building the webkit plugin for now, we have a circular build-
