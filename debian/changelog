@@ -1,3 +1,9 @@
+libproxy (0.2.3-5) UNRELEASED; urgency=low
+
+  * libproxy-tools is section utils.
+
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Sun, 12 Jul 2009 20:14:16 +0200
+
 libproxy (0.2.3-4) unstable; urgency=low
 
   * Don't build NetworkManager support on non-Linux platforms. Thanks

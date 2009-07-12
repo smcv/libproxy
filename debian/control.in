@@ -45,6 +45,7 @@ Description: automatic proxy configuration management library (devel)
  This package contains the development files.
 
 Package: libproxy-tools
+Section: utils
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
