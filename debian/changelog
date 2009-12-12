@@ -1,8 +1,26 @@
-libproxy (0.2.3-5) UNRELEASED; urgency=low
+libproxy (0.3.1-1) UNRELEASED; urgency=low
 
   * libproxy-tools is section utils.
+  * New upstream release.
+    - debian/patches/10_configure-check-for-dbus.patch,
+      debian/patches/60_am-prog-cc-c-o.patch:
+      + Removed, fixed upstream.
+    - debian/control.in:
+      + Build depend on gconf2 instead of libgconf2-dev.
+      + Build depend on kdelibs5-dev and libqt4-dev for the KDE4 plugin.
+    - debian/patches/50_px-wpad-fallback-env-var.patch,
+      debian/rules:
+      + Remove patch, don't install wpad_dnsdevolution.so now.
+    - debian/patches/70_autotools.patch:
+      + Removed, no longer needed.
+    - debian/libproxy0.install:
+      + s/plugins/modules/ following the upstream change.
+  * debian/control.in:
+    - Update my maintainer email address.
+  * debian/watch:
+    - Look for bzip2 tarballs.
 
- -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Sun, 12 Jul 2009 20:14:16 +0200
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 11 Dec 2009 19:17:21 +0100
 
 libproxy (0.2.3-4) unstable; urgency=low
 

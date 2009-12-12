@@ -1,7 +1,7 @@
 Source: libproxy
 Section: libs
 Priority: optional
-Maintainer: Emilio Pozuelo Monfort <pochu@ubuntu.com>
+Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
 Uploaders: @GNOME_TEAM@
 Build-Depends: cdbs,
                debhelper (>= 5),
@@ -12,9 +12,11 @@ Build-Depends: cdbs,
                network-manager-dev [!hurd-i386 !kfreebsd-i386 !kfreebsd-amd64],
                libdbus-1-dev,
                libmozjs-dev,
+               kdelibs5-dev,
+               libqt4-dev,
 # we have a build-depends loop with webkit
 #               libwebkit-dev,
-               libgconf2-dev,
+               gconf2,
                libxmu-dev
 Standards-Version: 3.8.2
 XS-Python-Version: >= 2.5

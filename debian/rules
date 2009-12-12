@@ -15,3 +15,6 @@ DEB_DH_SHLIBDEPS_ARGS_$(libproxy) := -Xplugins
 
 binary-install/python-libproxy::
 	dh_pysupport -p$(cdbs_curpkg)
+
+binary-install/$(libproxy)::
+	rm debian/$(libproxy)/usr/lib/libproxy/*/modules/wpad_dnsdevolution.so
