@@ -13,12 +13,16 @@ libproxy (0.3.1-1) UNRELEASED; urgency=low
       + Remove patch, don't install wpad_dnsdevolution.so now.
     - debian/patches/70_autotools.patch:
       + Removed, no longer needed.
-    - debian/libproxy0.install:
+    - debian/libproxy0.install,
+      debian/rules:
       + s/plugins/modules/ following the upstream change.
   * debian/control.in:
     - Update my maintainer email address.
+    - Standards-Version is 3.8.3, no changes needed.
   * debian/watch:
     - Look for bzip2 tarballs.
+  * debian/patches/libproxy_link_against_libdl.patch:
+    - Link with -ldl for dlopen et al. Closes: #558920.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 11 Dec 2009 19:17:21 +0100
 

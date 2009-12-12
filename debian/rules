@@ -11,7 +11,7 @@ SHLIBVER := 0.2.3
 libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+)[[:space:]]*$$/\1/p' debian/control)
 
 DEB_DH_MAKESHLIBS_ARGS_$(libproxy) = -V '$(libproxy) (>= $(SHLIBVER))'
-DEB_DH_SHLIBDEPS_ARGS_$(libproxy) := -Xplugins
+DEB_DH_SHLIBDEPS_ARGS_$(libproxy) := -Xmodules
 
 binary-install/python-libproxy::
 	dh_pysupport -p$(cdbs_curpkg)
