@@ -1,3 +1,11 @@
+libproxy (0.3.1-2) UNRELEASED; urgency=low
+
+  * debian/patches/libproxy_link_against_libdl.patch:
+    - Removed, configure.ac already adds the correct check so this is not
+      needed anymore.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 14 Dec 2009 16:32:31 +0100
+
 libproxy (0.3.1-1) unstable; urgency=low
 
   * New upstream release.
