@@ -8,6 +8,9 @@ libproxy (0.3.1-2) unstable; urgency=low
   [ Josselin Mouette ]
   * 01_pac_http.patch: new patch from Julien Blache. Don’t assume HTTP 
     header names are case sensitive. Closes: #600196.
+  * Re-enable webkit support. The build-dependency loop is not a problem 
+    for a stable release. (But the issue will arise again later.)
+  * Recommend libwebkit-1.0-2 | libmozjs2d. Closes: #597864.
 
  -- Josselin Mouette <joss@debian.org>  Tue, 19 Oct 2010 08:46:05 +0200
 

@@ -14,8 +14,8 @@ Build-Depends: cdbs,
                libmozjs-dev,
                kdelibs5-dev,
                libqt4-dev,
-# we have a build-depends loop with webkit
-#               libwebkit-dev,
+# /!\ we have a build-depends loop with webkit
+               libwebkit-dev,
                gconf2,
                libxmu-dev
 Standards-Version: 3.8.3
@@ -28,6 +28,7 @@ Package: libproxy0
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Recommends: libwebkit-1.0-2 | libmozjs2d
 Description: automatic proxy configuration management library (shared)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
