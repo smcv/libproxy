@@ -2,7 +2,6 @@
 
 include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/simple-patchsys.mk
 include /usr/share/cdbs/1/rules/utils.mk
 include /usr/share/cdbs/1/class/gnome.mk
 include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
@@ -14,7 +13,7 @@ DEB_DH_MAKESHLIBS_ARGS_$(libproxy) = -V '$(libproxy) (>= $(SHLIBVER))'
 DEB_DH_SHLIBDEPS_ARGS_$(libproxy) := -Xmodules
 
 binary-install/python-libproxy::
-	dh_pysupport -p$(cdbs_curpkg)
+	dh_python2 -p$(cdbs_curpkg)
 
 binary-install/$(libproxy)::
 	rm debian/$(libproxy)/usr/lib/libproxy/*/modules/wpad_dnsdevolution.so

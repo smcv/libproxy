@@ -12,19 +12,18 @@ Build-Depends: cdbs,
                debhelper (>= 5),
                gnome-pkg-tools,
                autotools-dev,
-               python-all-dev,
-               python-support,
+               python-all-dev (>= 2.6.6-3~),
                network-manager-dev [linux-any],
                libdbus-1-dev,
-               libmozjs-dev,
+               libmozjs-dev (>= 6),
                kdelibs5-dev,
                libqt4-dev,
 # /!\ we have a build-depends loop with webkit
-               libwebkit-dev,
+               libwebkitgtk-dev,
                gconf2,
                libxmu-dev
 Standards-Version: 3.8.3
-XS-Python-Version: >= 2.5
+X-Python-Version: >= 2.5
 Vcs-Svn: svn://svn.debian.org/svn/pkg-gnome/packages/unstable/libproxy
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-gnome/packages/unstable/libproxy
 Homepage: http://code.google.com/p/libproxy/
@@ -33,7 +32,7 @@ Package: libproxy0
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Recommends: libwebkit-1.0-2 | libmozjs2d
+Recommends: libwebkitgtk-1.0-0 | libmozjs6d
 Description: automatic proxy configuration management library (shared)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -67,7 +66,6 @@ Description: automatic proxy configuration management library (tools)
 Package: python-libproxy
 Architecture: all
 Section: python
-XB-Python-Version: ${python:Versions}
 Depends: ${python:Depends},
          ${misc:Depends},
          libproxy0 (>= ${source:Version})
