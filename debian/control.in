@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
 Uploaders: @GNOME_TEAM@
 Build-Depends: cdbs,
-               debhelper (>= 5),
+               debhelper (>= 8),
                gnome-pkg-tools,
                autotools-dev,
                python-all-dev (>= 2.6.6-3~),

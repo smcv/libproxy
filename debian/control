@@ -7,9 +7,9 @@ Source: libproxy
 Section: libs
 Priority: optional
 Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
-Uploaders: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>, Josselin Mouette <joss@debian.org>
+Uploaders: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>, Josselin Mouette <joss@debian.org>, Michael Biebl <biebl@debian.org>
 Build-Depends: cdbs,
-               debhelper (>= 5),
+               debhelper (>= 8),
                gnome-pkg-tools,
                autotools-dev,
                python-all-dev (>= 2.6.6-3~),

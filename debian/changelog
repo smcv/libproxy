@@ -2,6 +2,9 @@ libproxy (0.3.1-4) UNRELEASED; urgency=low
 
   * debian/patches/03_format-security.patch:
     - Fix build failure with [-Werror=format-security]. Closes: #643433
+  * Bump debhelper compatibility level to 8.
+    - Update Build-Depends on debhelper.
+    - Strip debian/tmp/ from .install files.
 
  -- Michael Biebl <biebl@debian.org>  Tue, 25 Oct 2011 01:41:45 +0200
 
