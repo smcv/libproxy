@@ -8,6 +8,7 @@ libproxy (0.3.1-4) UNRELEASED; urgency=low
   * Don't hard-code the Recommends on libwebkitgtk-1.0-0 | libmozjs6d.
     Instead filter out the correct library package names as found by
     dpkg-shlibdeps and set them via substvars.
+  * Bump Standards-Version to 3.9.2. No further changes.
 
  -- Michael Biebl <biebl@debian.org>  Tue, 25 Oct 2011 01:41:45 +0200
 
