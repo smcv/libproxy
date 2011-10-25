@@ -27,7 +27,7 @@ Package: libproxy0
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Recommends: libwebkitgtk-1.0-0 | libmozjs6d
+Recommends: ${webkit:Recommends} | ${moz:Recommends}
 Description: automatic proxy configuration management library (shared)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.

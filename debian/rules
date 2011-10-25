@@ -11,9 +11,13 @@ libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+)[[:space:]]*
 
 DEB_DH_MAKESHLIBS_ARGS_$(libproxy) = -V '$(libproxy) (>= $(SHLIBVER))'
 DEB_DH_SHLIBDEPS_ARGS_$(libproxy) := -Xmodules
+DEB_DH_GENCONTROL_ARGS_libproxy0 = -- \
+	-Vmoz:Recommends=$(shell grep -o "libmoz[a-z0-9]*" debian/libproxy0.substvars) \
+	-Vwebkit:Recommends=$(shell grep -o "libwebkit[a-z0-9.-]*" debian/libproxy0.substvars)
 
 binary-install/python-libproxy::
 	dh_python2 -p$(cdbs_curpkg)
 
 binary-install/$(libproxy)::
+	dh_shlibdeps -plibproxy0 -- -pmodules
 	rm debian/$(libproxy)/usr/lib/libproxy/*/modules/wpad_dnsdevolution.so

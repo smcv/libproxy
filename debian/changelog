@@ -5,6 +5,9 @@ libproxy (0.3.1-4) UNRELEASED; urgency=low
   * Bump debhelper compatibility level to 8.
     - Update Build-Depends on debhelper.
     - Strip debian/tmp/ from .install files.
+  * Don't hard-code the Recommends on libwebkitgtk-1.0-0 | libmozjs6d.
+    Instead filter out the correct library package names as found by
+    dpkg-shlibdeps and set them via substvars.
 
  -- Michael Biebl <biebl@debian.org>  Tue, 25 Oct 2011 01:41:45 +0200
 
