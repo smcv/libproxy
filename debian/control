@@ -18,7 +18,6 @@ Build-Depends: cdbs (>= 0.4.93~),
                libmozjs-dev (>= 6),
                kdelibs5-dev,
                libqt4-dev,
-# /!\ we have a build-depends loop with webkit
                libwebkitgtk-dev,
                gconf2,
                libxmu-dev
