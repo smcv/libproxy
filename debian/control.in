@@ -3,8 +3,8 @@ Section: libs
 Priority: optional
 Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
 Uploaders: @GNOME_TEAM@
-Build-Depends: cdbs,
-               debhelper (>= 8),
+Build-Depends: cdbs (>= 0.4.93~),
+               debhelper (>= 8.1.3~),
                gnome-pkg-tools,
                autotools-dev,
                python-all-dev (>= 2.6.6-3~),
@@ -25,6 +25,8 @@ Homepage: http://code.google.com/p/libproxy/
 
 Package: libproxy0
 Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Recommends: ${webkit:Recommends} | ${moz:Recommends}
@@ -36,6 +38,7 @@ Description: automatic proxy configuration management library (shared)
 
 Package: libproxy-dev
 Architecture: any
+Multi-Arch: same
 Section: libdevel
 Depends: ${shlibs:Depends},
          ${misc:Depends},
@@ -49,6 +52,7 @@ Description: automatic proxy configuration management library (devel)
 Package: libproxy-tools
 Section: utils
 Architecture: any
+Multi-Arch: foreign
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Description: automatic proxy configuration management library (tools)

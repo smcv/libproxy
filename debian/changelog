@@ -1,3 +1,9 @@
+libproxy (0.3.1-5) UNRELEASED; urgency=low
+
+  * debian/{control,rules,*.install}: Convert to Multi-Arch. Closes: #651491
+
+ -- Kees Cook <kees@debian.org>  Thu, 15 Dec 2011 15:16:41 -0800
+
 libproxy (0.3.1-4) unstable; urgency=low
 
   * debian/patches/03_format-security.patch:
