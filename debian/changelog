@@ -1,6 +1,11 @@
 libproxy (0.3.1-5) UNRELEASED; urgency=low
 
+  [ Kees Cook ]
   * debian/{control,rules,*.install}: Convert to Multi-Arch. Closes: #651491
+
+  [ Michael Biebl ]
+  * Bump Standards-Version to 3.9.3.
+  * Update Vcs-* URLs.
 
  -- Kees Cook <kees@debian.org>  Thu, 15 Dec 2011 15:16:41 -0800
 

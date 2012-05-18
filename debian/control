@@ -21,10 +21,10 @@ Build-Depends: cdbs (>= 0.4.93~),
                libwebkitgtk-dev,
                gconf2,
                libxmu-dev
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 X-Python-Version: >= 2.5
-Vcs-Svn: svn://svn.debian.org/svn/pkg-gnome/packages/unstable/libproxy
-Vcs-Browser: http://svn.debian.org/viewsvn/pkg-gnome/packages/unstable/libproxy
+Vcs-Svn: svn://anonscm.debian.org/svn/pkg-gnome/packages/unstable/libproxy
+Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-gnome/packages/unstable/libproxy
 Homepage: http://code.google.com/p/libproxy/
 
 Package: libproxy0
