@@ -1,3 +1,10 @@
+libproxy (0.3.1-5.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Fix cve-2012-4505: buffer overflow in lib/pac.c (closes: #690376).
+
+ -- Michael Gilbert <mgilbert@debian.org>  Sat, 27 Oct 2012 04:44:22 -0400
+
 libproxy (0.3.1-5) unstable; urgency=low
 
   [ Kees Cook ]
