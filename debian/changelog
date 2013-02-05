@@ -1,3 +1,9 @@
+libproxy (0.3.1-6) unstable; urgency=low
+
+  * Swap libmozjs and webkitgtk Recommends. Closes: #699788.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 05 Feb 2013 08:59:26 +0100
+
 libproxy (0.3.1-5.1) unstable; urgency=high
 
   * Non-maintainer upload.
