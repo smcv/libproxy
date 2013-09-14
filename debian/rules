@@ -1,24 +1,50 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/class/autotools.mk
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/utils.mk
-include /usr/share/cdbs/1/class/gnome.mk
 include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
 
-SHLIBVER := 0.2.3
-libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+)[[:space:]]*$$/\1/p' debian/control)
+SHLIBVER := 0.4.11
+libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+)[[:space:]]*$$/\1/p' debian/control.in)
 
-DEB_DH_MAKESHLIBS_ARGS_$(libproxy) = -V '$(libproxy) (>= $(SHLIBVER))'
-DEB_DH_SHLIBDEPS_ARGS_$(libproxy) := -Xmodules
-DEB_DH_GENCONTROL_ARGS_$(libproxy) = -- \
-	-Vmoz:Recommends=$(shell grep -o "libmoz[a-z0-9]*" debian/libproxy0.substvars) \
-	-Vwebkit:Recommends=$(shell grep -o "libwebkit[a-z0-9.-]*" debian/libproxy0.substvars)
-DEB_CONFIGURE_EXTRA_FLAGS += --libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
+#export DH_VERBOSE=1
 
-binary-install/python-libproxy::
-	dh_python2 -p$(cdbs_curpkg)
+export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
 
-binary-install/$(libproxy)::
-	dh_shlibdeps -plibproxy0 -- -pmodules
-	rm debian/$(libproxy)/usr/lib/*/libproxy/*/modules/wpad_dnsdevolution.so
+# only invoke dh --with cli if cli-common-dev is present
+WITH_CLI = --with cli
+WITH_DOTNET = -DWITH_DOTNET=ON
+ifeq (,$(wildcard /usr/share/perl5/Debian/Debhelper/Sequence/cli.pm))
+WITH_CLI = 
+WITH_DOTNET = -DWITH_DOTNET=OFF
+endif
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+CONFIGURE_FLAGS = $(WITH_DOTNET) \
+		-DWITH_VALA=ON \
+		-DWITH_GNOME3=ON \
+		-DWITH_MOZJS=ON \
+		-DWITH_WEBKIT3=ON \
+		-DGMCS_EXECUTABLE=/usr/bin/mono-csc \
+		-DCMAKE_SKIP_RPATH=ON \
+		-DBIPR=0 \
+		-DLIB_INSTALL_DIR=/usr/lib/$(DEB_HOST_MULTIARCH) \
+		-DLIBEXEC_INSTALL_DIR=/usr/lib/$(DEB_HOST_MULTIARCH)/libproxy/$(SHLIBVER)
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(CONFIGURE_FLAGS)
+
+override_dh_install-arch:
+	dh_install
+	rm -f \
+	  debian/libproxy-dev/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/libproxy-sharp-*.pc
+
+override_dh_install-indep:
+	dh_install
+	sed -i 's!/usr/lib/mono/libproxy-sharp!/usr/lib/cli/libproxy-sharp-0.4!' \
+		debian/libproxy-cil-dev/usr/lib/pkgconfig/libproxy-sharp-1.0.pc
+
+override_dh_makeshlibs:
+	dh_makeshlibs -V '$(libproxy) (>= $(SHLIBVER))'
+
+%:
+	dh $@ $(WITH_CLI) --with python2
