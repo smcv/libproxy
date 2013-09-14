@@ -1,4 +1,4 @@
-libproxy (0.4.11-1) UNRELEASED; urgency=low
+libproxy (0.4.11-1) experimental; urgency=low
 
   * Upload new upstream release to debian, thanks to the Ubuntu guys for the
     changes (Closes: #604934)
@@ -13,10 +13,10 @@ libproxy (0.4.11-1) UNRELEASED; urgency=low
     from upstream VCS.
   * debian/libproxy1.symbols: Add symbols file
   * debian/watch: Update to work with Google Code website, again.
-  * debian/proxy.1, debian/libproxy-tools: Install a manpage for the proxy
-    command (Closes: #660327)
+  * debian/proxy.1, debian/libproxy-tools.manpages: Install a manpage for the
+    proxy command (Closes: #660327)
 
- -- Laurent Bigonville <bigon@debian.org>  Sat, 14 Sep 2013 15:30:46 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 14 Sep 2013 15:35:03 +0200
 
 libproxy (0.4.11-0ubuntu2) saucy; urgency=low
 
