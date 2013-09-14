@@ -8,12 +8,15 @@ libproxy (0.4.11-1) UNRELEASED; urgency=low
   * debian/rules:
     - Re-add uploaders.mk magic
     - Bump SHLIBVER to 0.4.11
+    - Make the build fails if symbols are missing the .symbols file
   * debian/patches/fix-mozjs-detection.patch: Properly detect mozjs, patch
     from upstream VCS.
   * debian/libproxy1.symbols: Add symbols file
   * debian/watch: Update to work with Google Code website, again.
+  * debian/proxy.1, debian/libproxy-tools: Install a manpage for the proxy
+    command (Closes: #660327)
 
- -- Laurent Bigonville <bigon@debian.org>  Sat, 14 Sep 2013 03:23:51 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 14 Sep 2013 15:30:46 +0200
 
 libproxy (0.4.11-0ubuntu2) saucy; urgency=low
 

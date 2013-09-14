@@ -44,7 +44,7 @@ override_dh_install-indep:
 		debian/libproxy-cil-dev/usr/lib/pkgconfig/libproxy-sharp-1.0.pc
 
 override_dh_makeshlibs:
-	dh_makeshlibs -V '$(libproxy) (>= $(SHLIBVER))'
+	dh_makeshlibs -V '$(libproxy) (>= $(SHLIBVER))' -- -c4
 
 %:
 	dh $@ $(WITH_CLI) --with python2
