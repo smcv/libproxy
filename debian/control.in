@@ -62,7 +62,7 @@ Description: automatic proxy configuration management library (KConfig plugin)
  KConfig (KDE 4)
 
 Package: libproxy1-plugin-networkmanager
-Architecture: any
+Architecture: linux-any
 Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends},

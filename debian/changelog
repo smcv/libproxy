@@ -1,3 +1,12 @@
+libproxy (0.4.11-2) UNRELEASED; urgency=low
+
+  * debian/control.in: Only build networkmanager plugin on linux-any
+    architectures
+  * Drop debian/libproxy1.symbols: .symbols file with C++ libraries is just a
+    nightmare, rely on the good old shlibs file
+
+ -- Laurent Bigonville <bigon@debian.org>  Wed, 18 Sep 2013 15:24:55 +0200
+
 libproxy (0.4.11-1) experimental; urgency=low
 
   * Upload new upstream release to debian, thanks to the Ubuntu guys for the
