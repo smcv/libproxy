@@ -1,3 +1,10 @@
+libproxy (0.4.11-3) UNRELEASED; urgency=low
+
+  * debian/control.in: Build-depend on netbase, this will hopefully fix the
+    FTBFS
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 10 Oct 2013 16:04:04 +0200
+
 libproxy (0.4.11-2) experimental; urgency=low
 
   * debian/control.in: Only build networkmanager plugin on linux-any
