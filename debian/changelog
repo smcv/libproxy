@@ -1,3 +1,143 @@
+libproxy (0.4.11-4) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 03 Nov 2013 13:34:28 +0100
+
+libproxy (0.4.11-3) experimental; urgency=low
+
+  * debian/control.in: Build-depend on netbase, this will hopefully fix the
+    FTBFS
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 10 Oct 2013 16:06:21 +0200
+
+libproxy (0.4.11-2) experimental; urgency=low
+
+  * debian/control.in: Only build networkmanager plugin on linux-any
+    architectures
+  * Drop debian/libproxy1.symbols: .symbols file with C++ libraries is just a
+    nightmare, rely on the good old shlibs file
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 28 Sep 2013 13:34:14 +0200
+
+libproxy (0.4.11-1) experimental; urgency=low
+
+  * Upload new upstream release to debian, thanks to the Ubuntu guys for the
+    changes (Closes: #604934)
+  * Re-enable mozjs plugin, this new version is built against mozjs185, this
+    fix the current FTBFS and the stability of the ABI/API we build against
+    (Closes: #707419, #722685)
+  * debian/rules:
+    - Re-add uploaders.mk magic
+    - Bump SHLIBVER to 0.4.11
+    - Make the build fails if symbols are missing the .symbols file
+  * debian/patches/fix-mozjs-detection.patch: Properly detect mozjs, patch
+    from upstream VCS.
+  * debian/libproxy1.symbols: Add symbols file
+  * debian/watch: Update to work with Google Code website, again.
+  * debian/proxy.1, debian/libproxy-tools.manpages: Install a manpage for the
+    proxy command (Closes: #660327)
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 14 Sep 2013 15:35:03 +0200
+
+libproxy (0.4.11-0ubuntu2) saucy; urgency=low
+
+  * debian/patches/dont_segfault_on_exit.patch:
+    - drop buggy unref calls to fix a segfault (lp: #1182043)  
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 30 May 2013 13:20:43 +0200
+
+libproxy (0.4.11-0ubuntu1) raring; urgency=low
+
+  * New upstream release
+    - Build fixes with cmake 2.8.10+
+    - Quick release without built binaries / files
+      + Remove these from debian/clean
+  * debian/watch: Update to work with current Google Code website (once more
+    with feeling)
+
+ -- Iain Lane <iain.lane@canonical.com>  Thu, 10 Jan 2013 12:17:22 +0000
+
+libproxy (0.4.10-0ubuntu1) raring; urgency=low
+
+  * New upstream release 0.4.10 (LP: #1078915). Selected fixes since 0.4.7:
+    - Fix infinite loop uppon network errors
+    - Only support standalone mozjs185 as mozilla js engine.  xulrunner being
+      part of the now lightning fast moving firefox is impossible to be tracked
+      as a dependency and it is not supported by Mozilla to be used in this
+      scenario.
+    - Support building with javascritpcoregtk 1.5 (got split out of webkitgtk).
+  * debian/watch: Update to work with Google code again .
+  * Remove all patches - all applied upstream. 
+  * Clean accidently shipped built binaries to ensure we ship those built from
+    this source.
+  * debian/patches/disable-pac-test.patch: Steal patch from Gentoo to disable
+    the get-pac-test which hangs when run from the build.
+  * Bump Standards-Version to 3.9.4, no changes required. 
+  * Add basic compile/link/run autopkgtest - thanks to Rafal Cieślak (LP:
+    #1079102)
+
+ -- Iain Lane <iain.lane@canonical.com>  Thu, 15 Nov 2012 12:06:57 +0000
+
+libproxy (0.4.7-0ubuntu6) quantal; urgency=low
+
+  * debian/patches/CVE-2012-4504.patch: Cherry-pick upstream r853 to fix
+    buffer overflow when downloading large PAC files. 
+
+ -- Iain Lane <iain.lane@canonical.com>  Wed, 10 Oct 2012 17:56:14 +0100
+
+libproxy (0.4.7-0ubuntu5) quantal; urgency=low
+
+  * debian/patches/libproxy-gcc-4.7.diff: Cherry-pick patch from upstream svn
+    r833 to fix FTBFS with GCC-4.7 due to missing includes.
+
+ -- Iain Lane <iain.lane@canonical.com>  Tue, 25 Sep 2012 12:51:03 +0100
+
+libproxy (0.4.7-0ubuntu4) precise; urgency=low
+
+  * Re-enable webkit pacrunner and build it into its own module package
+    (adding a patch to the upstream build system required to achieve this).
+    (LP: #934088)
+  * Build with webkit3.
+
+ -- Iain Lane <laney@ubuntu.com>  Fri, 17 Feb 2012 10:10:45 +0000
+
+libproxy (0.4.7-0ubuntu3) precise; urgency=low
+
+  * Drop libwebkitgtk-dev build dependency. We just got rid of the old
+    webkit-gtk2 stack, we don't want to pull that back in. We already had to
+    disable the webkit plugin as this needs mozjs. (LP: #933913)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 17 Feb 2012 07:54:22 +0100
+
+libproxy (0.4.7-0ubuntu2) precise; urgency=low
+
+  * debian/control: Drop mozjs build dependency and mozjs/webkit plugin
+    packages, mozjs is in universe (and supposed to stay there).
+  * debian/rules: Disable WITH_MOZJS.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed, 15 Feb 2012 16:21:24 +0100
+
+libproxy (0.4.7-0ubuntu1) precise; urgency=low
+
+  [ Iain Lane ]
+  * New upstream release.
+  * Convert to dh7.
+  * SONAME bump, rename packages accordingly
+  * Remove obsolete patches
+  * Add CLI/Vala bindings.
+  * Also install vala bindings (in -dev package)
+  * Update Standards-Version to 3.9.2
+  * Split modules into individual packages
+  * Link with --as-needed to avoid unnecessary deps
+  * Update copyright
+  * Make library multiarch compatible
+
+  [ Ken VanDine ]
+  * Build against libmozjs185.
+
+ -- Iain Lane <laney@debian.org>  Wed, 15 Feb 2012 14:42:54 +0100
+
 libproxy (0.3.1-6) unstable; urgency=low
 
   * Swap libmozjs and webkitgtk Recommends. Closes: #699788.
