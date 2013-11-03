@@ -1,3 +1,9 @@
+libproxy (0.4.11-4) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 03 Nov 2013 13:34:28 +0100
+
 libproxy (0.4.11-3) experimental; urgency=low
 
   * debian/control.in: Build-depend on netbase, this will hopefully fix the
