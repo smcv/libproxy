@@ -5,6 +5,11 @@ libproxy (0.4.11-5) UNRELEASED; urgency=medium
   * Break a couple of build dependency loops (Closes: #758466)
   * Add build profile annotations to debian/control (Closes: #758467)
 
+  [ Andreas Henriksson ]
+  * Build-depend on dpkg-dev (>= 1.17.2) and bump debhelper to >= 9.20140227
+    - these versions introduced build profiles support.
+  * Bump Standards-Version to 3.9.5
+
  -- Andreas Henriksson <andreas@fatal.se>  Mon, 18 Aug 2014 21:07:56 +0200
 
 libproxy (0.4.11-4) unstable; urgency=low

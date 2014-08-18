@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
 Uploaders: @GNOME_TEAM@
 Build-Depends-Indep: cli-common-dev (>= 0.5.7~) <!profile.stage1>, mono-devel (>= 2.4.3) <!profile.stage1>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 9.20140227),
+               dpkg-dev (>= 1.17.2),
                gnome-pkg-tools,
                netbase,
                cmake,
@@ -19,7 +20,7 @@ Build-Depends: debhelper (>= 9),
                libjavascriptcoregtk-3.0-dev <!profile.stage1>,
                libglib2.0-dev (>= 2.26) <!profile.stage1>,
                libxmu-dev <!profile.stage1>
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 X-Python-Version: >= 2.5
 Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/packages/unstable/libproxy
 Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-gnome/packages/unstable/libproxy/
