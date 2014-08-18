@@ -8,7 +8,11 @@ Section: libs
 Priority: optional
 Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
 Uploaders: Andreas Henriksson <andreas@fatal.se>, Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>, Laurent Bigonville <bigon@debian.org>
+# In the stage1 build profile, remove both cli-common-dev and mono-devel.
 Build-Depends-Indep: cli-common-dev (>= 0.5.7~), mono-devel (>= 2.4.3)
+# In the stage1 build profile, remove libmozjs185-dev, kdelibs5-dev,
+# libqt4-dev, libwebkitgtk-3.0-dev, libjavascriptcoregtk-3.0-dev,
+# libglib2.0-dev, libxmu-dev.
 Build-Depends: debhelper (>= 9),
                gnome-pkg-tools,
                netbase,
