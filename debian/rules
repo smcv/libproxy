@@ -34,32 +34,30 @@ CONFIGURE_FLAGS += \
 		-DWITH_GNOME3=ON \
 		-DWITH_MOZJS=ON \
 		-DWITH_WEBKIT3=ON
-DH_EXCLUDE	=
 else
 CONFIGURE_FLAGS += \
 		-DWITH_GNOME3=OFF \
 		-DWITH_MOZJS=OFF \
 		-DWITH_WEBKIT3=OFF
-DH_EXCLUDE	= -Nlibproxy1-plugin-gsettings -Nlibproxy1-plugin-kconfig -Nlibproxy1-plugin-mozjs -Nlibproxy1-plugin-webkit -Nlibproxy0.4-cil -Nlibproxy-cil-dev
 endif
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(CONFIGURE_FLAGS)
 
 override_dh_install-arch:
-	dh_install $(DH_EXCLUDE)
+	dh_install
 	rm -f \
 	  debian/libproxy-dev/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/libproxy-sharp-*.pc
 
 override_dh_install-indep:
-	dh_install $(DH_EXCLUDE)
+	dh_install
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
 	sed -i 's!/usr/lib/mono/libproxy-sharp!/usr/lib/cli/libproxy-sharp-0.4!' \
 		debian/libproxy-cil-dev/usr/lib/pkgconfig/libproxy-sharp-1.0.pc
 endif
 
 override_dh_makeshlibs:
-	dh_makeshlibs -V '$(libproxy) (>= $(SHLIBVER))' $(DH_EXCLUDE) -- -c4
+	dh_makeshlibs -V '$(libproxy) (>= $(SHLIBVER))' -- -c4
 
 %:
-	dh $@ $(WITH_CLI) --with python2 $(DH_EXCLUDE)
+	dh $@ $(WITH_CLI) --with python2

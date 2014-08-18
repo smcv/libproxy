@@ -3,6 +3,7 @@ libproxy (0.4.11-5) UNRELEASED; urgency=medium
   [ Peter Pentchev ]
   * Add explicit zlib build-dependency (Closes: #758465)
   * Break a couple of build dependency loops (Closes: #758466)
+  * Add build profile annotations to debian/control (Closes: #758467)
 
  -- Andreas Henriksson <andreas@fatal.se>  Mon, 18 Aug 2014 21:07:56 +0200
 
