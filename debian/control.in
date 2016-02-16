@@ -47,6 +47,7 @@ Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          libproxy1v5 (= ${binary:Version})
+Enhances: ${libproxy}
 Description: automatic proxy configuration management library (GSettings plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -61,6 +62,7 @@ Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          libproxy1v5 (= ${binary:Version})
+Enhances: ${libproxy}
 Description: automatic proxy configuration management library (KConfig plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -74,6 +76,7 @@ Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          libproxy1v5 (= ${binary:Version})
+Enhances: ${libproxy}
 Description: automatic proxy configuration management library (Network Manager plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -88,6 +91,7 @@ Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          libproxy1v5 (= ${binary:Version})
+Enhances: ${libproxy}
 Description: automatic proxy configuration management library (mozjs plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -102,6 +106,7 @@ Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          libproxy1v5 (= ${binary:Version})
+Enhances: ${libproxy}
 Description: automatic proxy configuration management library (Webkit plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.

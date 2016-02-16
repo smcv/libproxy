@@ -59,5 +59,8 @@ endif
 override_dh_makeshlibs:
 	dh_makeshlibs -V '$(libproxy) (>= $(SHLIBVER))' -- -c4
 
+override_dh_gencontrol:
+	dh_gencontrol -- -Vlibproxy=${libproxy}
+
 %:
 	dh $@ $(WITH_CLI) --with python2
