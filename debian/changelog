@@ -17,6 +17,7 @@ libproxy (0.4.11-5) UNRELEASED; urgency=medium
     Cherry-pick - allow building against webkit2gtk. Update BDs too.
   * Add Enhances: from the plugin packages to the library so that people can
     find them easier. (Closes: #768435, #768437)
+  * Use the substvar we just added to add Depends on our shared package.
 
  -- Andreas Henriksson <andreas@fatal.se>  Mon, 18 Aug 2014 21:07:56 +0200
 
