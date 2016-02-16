@@ -1,3 +1,4 @@
 disable-pac-test.patch
 dont_segfault_on_exit.patch
 fix-mozjs-detection.patch
+0001-pacrunner_webkit-allow-linking-against-javascriptcor.patch

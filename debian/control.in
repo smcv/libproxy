@@ -16,8 +16,8 @@ Build-Depends: debhelper (>= 9.20140227),
                libmozjs185-dev (>= 1.8.5) <!stage1>,
                kdelibs5-dev <!stage1>,
                libqt4-dev <!stage1>,
-               libwebkitgtk-3.0-dev <!stage1>,
-               libjavascriptcoregtk-3.0-dev <!stage1>,
+               libwebkit2gtk-4.0-dev <!stage1>,
+               libjavascriptcoregtk-4.0-dev <!stage1>,
                libglib2.0-dev (>= 2.26) <!stage1>,
                libxmu-dev <!stage1>
 Standards-Version: 3.9.5
