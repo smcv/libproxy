@@ -10,7 +10,27 @@ libproxy (0.4.11-5) UNRELEASED; urgency=medium
     - these versions introduced build profiles support.
   * Bump Standards-Version to 3.9.5
 
+  [ Iain Lane ]
+  * Ack the NMUs, thanks!
+  * Fix the build profiles syntax to the current version.
+
  -- Andreas Henriksson <andreas@fatal.se>  Mon, 18 Aug 2014 21:07:56 +0200
+
+libproxy (0.4.11-4.2) unstable; urgency=medium
+
+  * Non maintainer upload.
+  * libproxy1-plugin-mozjs: Fix dependency on new libproxy1v5.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 04 Aug 2015 21:42:23 +0200
+
+libproxy (0.4.11-4.1) unstable; urgency=medium
+
+  * Non maintainer upload.
+  * Rename library libproxy1 -> libproxy1v5, needed as a follow-up transition
+    for the libstdc++6 ABI changes (patch by Sebastien Bacher).
+    Addresses: #794402.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 04 Aug 2015 20:15:37 +0200
 
 libproxy (0.4.11-4) unstable; urgency=low
 

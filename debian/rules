@@ -3,7 +3,7 @@
 include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
 
 SHLIBVER := 0.4.11
-libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+)[[:space:]]*$$/\1/p' debian/control.in)
+libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+(v5)?)[[:space:]]*$$/\1/p' debian/control.in)
 
 #export DH_VERBOSE=1
 

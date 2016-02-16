@@ -3,7 +3,7 @@ Section: libs
 Priority: optional
 Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
 Uploaders: @GNOME_TEAM@
-Build-Depends-Indep: cli-common-dev (>= 0.5.7~) <!profile.stage1>, mono-devel (>= 2.4.3) <!profile.stage1>
+Build-Depends-Indep: cli-common-dev (>= 0.5.7~) <!stage1>, mono-devel (>= 2.4.3) <!stage1>
 Build-Depends: debhelper (>= 9.20140227),
                dpkg-dev (>= 1.17.2),
                gnome-pkg-tools,
@@ -13,25 +13,27 @@ Build-Depends: debhelper (>= 9.20140227),
                python-all-dev (>= 2.6.6-3~),
                network-manager-dev [linux-any],
                libdbus-1-dev,
-               libmozjs185-dev (>= 1.8.5) <!profile.stage1>,
-               kdelibs5-dev <!profile.stage1>,
-               libqt4-dev <!profile.stage1>,
-               libwebkitgtk-3.0-dev <!profile.stage1>,
-               libjavascriptcoregtk-3.0-dev <!profile.stage1>,
-               libglib2.0-dev (>= 2.26) <!profile.stage1>,
-               libxmu-dev <!profile.stage1>
+               libmozjs185-dev (>= 1.8.5) <!stage1>,
+               kdelibs5-dev <!stage1>,
+               libqt4-dev <!stage1>,
+               libwebkitgtk-3.0-dev <!stage1>,
+               libjavascriptcoregtk-3.0-dev <!stage1>,
+               libglib2.0-dev (>= 2.26) <!stage1>,
+               libxmu-dev <!stage1>
 Standards-Version: 3.9.5
 X-Python-Version: >= 2.5
 Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/packages/unstable/libproxy
 Vcs-Browser: https://anonscm.debian.org/viewvc/pkg-gnome/packages/unstable/libproxy/
 Homepage: http://code.google.com/p/libproxy/
 
-Package: libproxy1
+Package: libproxy1v5
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Conflicts: libproxy1
+Replaces: libproxy1
 Description: automatic proxy configuration management library (shared)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -41,10 +43,10 @@ Description: automatic proxy configuration management library (shared)
 Package: libproxy1-plugin-gsettings
 Architecture: any
 Multi-Arch: same
-Build-Profiles: !stage1
+Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libproxy1 (= ${binary:Version})
+         libproxy1v5 (= ${binary:Version})
 Description: automatic proxy configuration management library (GSettings plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -55,10 +57,10 @@ Description: automatic proxy configuration management library (GSettings plugin)
 Package: libproxy1-plugin-kconfig
 Architecture: any
 Multi-Arch: same
-Build-Profiles: !stage1
+Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libproxy1 (= ${binary:Version})
+         libproxy1v5 (= ${binary:Version})
 Description: automatic proxy configuration management library (KConfig plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -71,7 +73,7 @@ Architecture: linux-any
 Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libproxy1 (= ${binary:Version})
+         libproxy1v5 (= ${binary:Version})
 Description: automatic proxy configuration management library (Network Manager plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -82,10 +84,10 @@ Description: automatic proxy configuration management library (Network Manager p
 Package: libproxy1-plugin-mozjs
 Architecture: any
 Multi-Arch: same
-Build-Profiles: !stage1
+Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libproxy1 (= ${binary:Version})
+         libproxy1v5 (= ${binary:Version})
 Description: automatic proxy configuration management library (mozjs plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -96,10 +98,10 @@ Description: automatic proxy configuration management library (mozjs plugin)
 Package: libproxy1-plugin-webkit
 Architecture: any
 Multi-Arch: same
-Build-Profiles: !stage1
+Build-Profiles: <!stage1>
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libproxy1 (= ${binary:Version})
+         libproxy1v5 (= ${binary:Version})
 Description: automatic proxy configuration management library (Webkit plugin)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -113,7 +115,7 @@ Multi-Arch: same
 Section: libdevel
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libproxy1 (= ${binary:Version})
+         libproxy1v5 (= ${binary:Version})
 Description: automatic proxy configuration management library (devel)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -137,7 +139,7 @@ Architecture: all
 Section: python
 Depends: ${python:Depends},
          ${misc:Depends},
-         libproxy1 (>= ${source:Version})
+         libproxy1v5 (>= ${source:Version})
 Description: automatic proxy configuration management library (python)
  libproxy is a lightweight library which makes it easy to develop
  applications proxy-aware with a simple and stable API.
@@ -147,7 +149,7 @@ Description: automatic proxy configuration management library (python)
 Package: libproxy0.4-cil
 Architecture: all
 Section: cli-mono
-Build-Profiles: !stage1
+Build-Profiles: <!stage1>
 Depends: ${cli:Depends},
          ${misc:Depends}
 Description: automatic proxy configuration management library (CLI)
@@ -159,7 +161,7 @@ Description: automatic proxy configuration management library (CLI)
 Package: libproxy-cil-dev
 Architecture: all
 Section: cli-mono
-Build-Profiles: !stage1
+Build-Profiles: <!stage1>
 Depends: ${cli:Depends},
          ${misc:Depends},
          libproxy0.4-cil (= ${binary:Version})
