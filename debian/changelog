@@ -1,3 +1,11 @@
+libproxy (0.4.11-6) UNRELEASED; urgency=medium
+
+  * Drop uploaders.mk from debian/rules as this breaks the clean target with
+    dh. Instead use the gnome dh addon which updates debian/control via
+    dh_gnome_clean.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 06 Apr 2016 01:18:36 +0200
+
 libproxy (0.4.11-5) unstable; urgency=medium
 
   [ Peter Pentchev ]
