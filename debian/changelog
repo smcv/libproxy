@@ -8,6 +8,10 @@ libproxy (0.4.13-1) UNRELEASED; urgency=medium
   [ Jeremy Bicha ]
   * New upstream version
   * debian/control.in debian/watch: Update homepage and watch URLs
+  * Dropped patches applied in new version:
+    - 0001-pacrunner_webkit-allow-linking-against-javascriptcor.patch
+    - dont_segfault_on_exit.patch
+    - fix-mozjs-detection.patch
 
  -- Jeremy Bicha <jbicha@linux.com>  Sun, 22 May 2016 22:42:47 -0400
 
