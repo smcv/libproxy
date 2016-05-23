@@ -21,7 +21,7 @@ Build-Depends: debhelper (>= 9.20140227),
                libjavascriptcoregtk-4.0-dev <!stage1>,
                libglib2.0-dev (>= 2.26) <!stage1>,
                libxmu-dev <!stage1>
-Standards-Version: 3.9.5
+Standards-Version: 3.9.8
 X-Python-Version: >= 2.6
 X-Python3-Version: >= 3.2
 Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/packages/unstable/libproxy
