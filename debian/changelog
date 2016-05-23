@@ -8,6 +8,8 @@ libproxy (0.4.13-1) UNRELEASED; urgency=medium
   [ Jeremy Bicha ]
   * New upstream version
   * debian/control.in debian/watch: Update homepage and watch URLs
+  * debian/control.in:
+    - Build-depend on libkf5config-bin instead of QT and KDE libs
   * debian/libproxy1-plugin-kconfig.install:
     config_kde.so instead of config_kde4.so
   * Dropped patches applied in new version:
