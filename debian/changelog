@@ -1,10 +1,15 @@
-libproxy (0.4.11-6) UNRELEASED; urgency=medium
+libproxy (0.4.13-1) UNRELEASED; urgency=medium
 
+  [ Michael Biebl ]
   * Drop uploaders.mk from debian/rules as this breaks the clean target with
     dh. Instead use the gnome dh addon which updates debian/control via
     dh_gnome_clean.
 
- -- Michael Biebl <biebl@debian.org>  Wed, 06 Apr 2016 01:18:36 +0200
+  [ Jeremy Bicha ]
+  * New upstream version
+  * debian/control.in debian/watch: Update homepage and watch URLs
+
+ -- Jeremy Bicha <jbicha@linux.com>  Sun, 22 May 2016 22:42:47 -0400
 
 libproxy (0.4.11-5) unstable; urgency=medium
 
