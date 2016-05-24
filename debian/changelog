@@ -1,5 +1,7 @@
 libproxy (0.4.13-1) UNRELEASED; urgency=medium
 
+  * Team upload.
+
   [ Michael Biebl ]
   * Drop uploaders.mk from debian/rules as this breaks the clean target with
     dh. Instead use the gnome dh addon which updates debian/control via
@@ -19,7 +21,7 @@ libproxy (0.4.13-1) UNRELEASED; urgency=medium
     - dont_segfault_on_exit.patch
     - fix-mozjs-detection.patch
 
- -- Jeremy Bicha <jbicha@linux.com>  Sun, 22 May 2016 22:42:47 -0400
+ -- Jeremy Bicha <jbicha@linux.com>  Mon, 23 May 2016 21:48:41 -0400
 
 libproxy (0.4.11-5) unstable; urgency=medium
 
