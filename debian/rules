@@ -48,7 +48,7 @@ override_dh_install-arch:
 	  debian/libproxy-dev/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/libproxy-sharp-*.pc
 
 override_dh_install-indep:
-	cp -a debian/tmp/usr/lib/python2.7 debian/tmp/usr/lib/python3
+	cp -a debian/tmp/usr/lib/$(shell pyversions -d) debian/tmp/usr/lib/python3
 	dh_install
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
 	sed -i 's!/usr/lib/mono/libproxy-sharp!/usr/lib/cli/libproxy-sharp-0.4!' \

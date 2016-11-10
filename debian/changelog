@@ -22,6 +22,9 @@ libproxy (0.4.13-1) UNRELEASED; urgency=medium
     - dont_segfault_on_exit.patch
     - fix-mozjs-detection.patch
 
+  [ Iain Lane ]
+  * debian/rules: Use pyversions -d
+
  -- Jeremy Bicha <jbicha@linux.com>  Mon, 23 May 2016 21:48:41 -0400
 
 libproxy (0.4.11-5) unstable; urgency=medium
