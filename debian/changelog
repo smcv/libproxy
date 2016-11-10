@@ -1,4 +1,4 @@
-libproxy (0.4.13-1) UNRELEASED; urgency=medium
+libproxy (0.4.13-1) unstable; urgency=medium
 
   * Team upload.
 
@@ -25,7 +25,7 @@ libproxy (0.4.13-1) UNRELEASED; urgency=medium
   [ Iain Lane ]
   * debian/rules: Use pyversions -d
 
- -- Jeremy Bicha <jbicha@linux.com>  Mon, 23 May 2016 21:48:41 -0400
+ -- Jeremy Bicha <jbicha@linux.com>  Thu, 10 Nov 2016 12:57:09 +0000
 
 libproxy (0.4.11-5) unstable; urgency=medium
 
