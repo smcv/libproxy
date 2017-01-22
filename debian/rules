@@ -5,7 +5,7 @@ libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+(v5)?)[[:spac
 
 #export DH_VERBOSE=1
 
-export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 # only invoke dh --with cli if cli-common-dev is present
 WITH_CLI = 
