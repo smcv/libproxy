@@ -5,6 +5,7 @@ libproxy (0.4.14-1) UNRELEASED; urgency=medium
     While the code has a fallback for the older header files, the new ones
     provided by libnm are preferred by upstream.
   * Use DEB_LDFLAGS_MAINT_APPEND to pass additional flags to the linker.
+  * Bump SHVER to 0.4.14.
 
  -- Michael Biebl <biebl@debian.org>  Sun, 22 Jan 2017 13:27:09 +0100
 

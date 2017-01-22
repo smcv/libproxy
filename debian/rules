@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-SHLIBVER := 0.4.13
+SHLIBVER := 0.4.14
 libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+(v5)?)[[:space:]]*$$/\1/p' debian/control.in)
 
 #export DH_VERBOSE=1
