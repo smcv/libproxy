@@ -1,4 +1,4 @@
-libproxy (0.4.14-1) UNRELEASED; urgency=medium
+libproxy (0.4.14-1) unstable; urgency=medium
 
   * New upstream release.
   * Switch Build-Depends from network-manager-dev to the newer libnm-dev.
@@ -7,7 +7,7 @@ libproxy (0.4.14-1) UNRELEASED; urgency=medium
   * Use DEB_LDFLAGS_MAINT_APPEND to pass additional flags to the linker.
   * Bump SHVER to 0.4.14.
 
- -- Michael Biebl <biebl@debian.org>  Sun, 22 Jan 2017 13:27:09 +0100
+ -- Michael Biebl <biebl@debian.org>  Sun, 22 Jan 2017 13:58:45 +0100
 
 libproxy (0.4.13-1.1) unstable; urgency=medium
 
