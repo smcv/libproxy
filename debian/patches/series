@@ -1,1 +1,2 @@
 disable-pac-test.patch
+fix-clean-reload-cache.patch
