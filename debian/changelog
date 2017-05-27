@@ -1,3 +1,10 @@
+libproxy (0.4.14-3) unstable; urgency=medium
+
+  [ Alexander Volkov ]
+  * Don't build depend on libkf5config-bin on stage1 (Closes: #847365)
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 27 May 2017 14:13:41 +0200
+
 libproxy (0.4.14-2) unstable; urgency=medium
 
   * debian/patches/fix-clean-reload-cache.patch: Make sure that the PAC/WPAD
