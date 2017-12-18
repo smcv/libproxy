@@ -5,7 +5,6 @@ Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
 Uploaders: @GNOME_TEAM@
 Build-Depends-Indep: cli-common-dev (>= 0.5.7~) <!stage1>, mono-devel (>= 2.4.3) <!stage1>
 Build-Depends: debhelper (>= 9.20140227),
-               dpkg-dev (>= 1.17.14),
                dh-python,
                gnome-pkg-tools,
                netbase,
@@ -21,7 +20,7 @@ Build-Depends: debhelper (>= 9.20140227),
                libjavascriptcoregtk-4.0-dev <!stage1>,
                libglib2.0-dev (>= 2.26) <!stage1>,
                libxmu-dev <!stage1>
-Standards-Version: 3.9.8
+Standards-Version: 4.1.2
 X-Python-Version: >= 2.6
 X-Python3-Version: >= 3.2
 Vcs-Git: https://anonscm.debian.org/git/pkg-gnome/libproxy.git
@@ -31,7 +30,6 @@ Homepage: https://libproxy.github.io/libproxy/
 Package: libproxy1v5
 Architecture: any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Conflicts: libproxy1
