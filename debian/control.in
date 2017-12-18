@@ -1,7 +1,7 @@
 Source: libproxy
 Section: libs
 Priority: optional
-Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
 Uploaders: @GNOME_TEAM@
 Build-Depends-Indep: cli-common-dev (>= 0.5.7~) <!stage1>, mono-devel (>= 2.4.3) <!stage1>
 Build-Depends: debhelper (>= 9.20140227),

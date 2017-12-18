@@ -2,6 +2,7 @@ libproxy (0.4.14-4) UNRELEASED; urgency=medium
 
   * Update Vcs fields for conversion to git
   * Add debian/gbp.conf
+  * Update Maintainer
   * Bump Standards-Version to 4.1.2
 
  -- Jeremy Bicha <jbicha@debian.org>  Mon, 18 Dec 2017 16:57:27 -0500
