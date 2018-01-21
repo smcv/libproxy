@@ -3,9 +3,8 @@
 SHLIBVER := 0.4.14
 libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+(v5)?)[[:space:]]*$$/\1/p' debian/control.in)
 
-#export DH_VERBOSE=1
-
-export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 
 # only invoke dh --with cli if cli-common-dev is present
 WITH_CLI = 
