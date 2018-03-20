@@ -1,6 +1,7 @@
 libproxy (0.4.14-5) UNRELEASED; urgency=medium
 
   * Update Vcs fields for migration to https://salsa.debian.org/
+  * Build-Depend on python3-distutils
 
  -- Jeremy Bicha <jbicha@debian.org>  Sat, 20 Jan 2018 21:49:39 -0500
 
@@ -160,7 +161,7 @@ libproxy (0.4.11-1) experimental; urgency=low
 libproxy (0.4.11-0ubuntu2) saucy; urgency=low
 
   * debian/patches/dont_segfault_on_exit.patch:
-    - drop buggy unref calls to fix a segfault (lp: #1182043)  
+    - drop buggy unref calls to fix a segfault (lp: #1182043)
 
  -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 30 May 2013 13:20:43 +0200
 
@@ -185,12 +186,12 @@ libproxy (0.4.10-0ubuntu1) raring; urgency=low
       scenario.
     - Support building with javascritpcoregtk 1.5 (got split out of webkitgtk).
   * debian/watch: Update to work with Google code again .
-  * Remove all patches - all applied upstream. 
+  * Remove all patches - all applied upstream.
   * Clean accidently shipped built binaries to ensure we ship those built from
     this source.
   * debian/patches/disable-pac-test.patch: Steal patch from Gentoo to disable
     the get-pac-test which hangs when run from the build.
-  * Bump Standards-Version to 3.9.4, no changes required. 
+  * Bump Standards-Version to 3.9.4, no changes required.
   * Add basic compile/link/run autopkgtest - thanks to Rafal Cieślak (LP:
     #1079102)
 
@@ -199,7 +200,7 @@ libproxy (0.4.10-0ubuntu1) raring; urgency=low
 libproxy (0.4.7-0ubuntu6) quantal; urgency=low
 
   * debian/patches/CVE-2012-4504.patch: Cherry-pick upstream r853 to fix
-    buffer overflow when downloading large PAC files. 
+    buffer overflow when downloading large PAC files.
 
  -- Iain Lane <iain.lane@canonical.com>  Wed, 10 Oct 2012 17:56:14 +0100
 
@@ -300,7 +301,7 @@ libproxy (0.3.1-3) unstable; urgency=low
   * Migrate to dh_python2. Closes: #635140.
   * Build-depend on mozjs >= 6, require libmozjs6d. Closes: #638942.
   * Switch to 3.0 quilt format.
-  * 02_url_user.patch: patch from Florian Echtler to fix incorrect 
+  * 02_url_user.patch: patch from Florian Echtler to fix incorrect
     parsing of URLs containing user and port but no password.
     Closes: #635684.
 
@@ -314,9 +315,9 @@ libproxy (0.3.1-2) unstable; urgency=low
       needed anymore.
 
   [ Josselin Mouette ]
-  * 01_pac_http.patch: new patch from Julien Blache. Don’t assume HTTP 
+  * 01_pac_http.patch: new patch from Julien Blache. Don’t assume HTTP
     header names are case sensitive. Closes: #600196.
-  * Re-enable webkit support. The build-dependency loop is not a problem 
+  * Re-enable webkit support. The build-dependency loop is not a problem
     for a stable release. (But the issue will arise again later.)
   * Recommend libwebkit-1.0-2 | libmozjs2d. Closes: #597864.
 
