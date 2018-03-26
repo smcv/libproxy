@@ -15,7 +15,6 @@ Build-Depends: debhelper (>= 11),
                libnm-dev [linux-any],
                libdbus-1-dev,
                libkf5config-bin <!stage1>,
-               libmozjs185-dev (>= 1.8.5) <!stage1>,
                libwebkit2gtk-4.0-dev <!stage1>,
                libjavascriptcoregtk-4.0-dev <!stage1>,
                libglib2.0-dev (>= 2.26) <!stage1>,
@@ -83,21 +82,6 @@ Description: automatic proxy configuration management library (Network Manager p
  .
  This package contains the plugin to allow libproxy to read information from
  Network Manager.
-
-Package: libproxy1-plugin-mozjs
-Architecture: any
-Multi-Arch: same
-Build-Profiles: <!stage1>
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         ${libproxy} (= ${binary:Version})
-Enhances: ${libproxy}
-Description: automatic proxy configuration management library (mozjs plugin)
- libproxy is a lightweight library which makes it easy to develop
- applications proxy-aware with a simple and stable API.
- .
- This package contains the plugin to allow libproxy to interpret PAC files
- using mozjs
 
 Package: libproxy1-plugin-webkit
 Architecture: any
