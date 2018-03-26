@@ -4,6 +4,7 @@ libproxy (0.4.15-1) UNRELEASED; urgency=medium
   * Update Vcs fields for migration to https://salsa.debian.org/
   * Drop libproxy1-plugin-mozjs. Use libproxy1-plugin-webkit instead.
     (Closes: #863783)
+  * Drop fix-clean-reload-cache.patch: Applied in new release
 
  -- Jeremy Bicha <jbicha@debian.org>  Sat, 20 Jan 2018 21:49:39 -0500
 
