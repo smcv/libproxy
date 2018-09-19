@@ -1,3 +1,10 @@
+libproxy (0.4.15-2) unstable; urgency=medium
+
+  [ Helmut Grohne ]
+  * Demote python Build-Depends to Build-Depends-Indep (Closes: #909211)
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 19 Sep 2018 19:04:50 -0400
+
 libproxy (0.4.15-1) unstable; urgency=medium
 
   * New upstream release
