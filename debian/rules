@@ -6,12 +6,14 @@ libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+(v5)?)[[:spac
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 
+DO_PACKAGES = $(shell dh_listpackages)
+
+DH_ADDONS=--with=gnome
 # only invoke dh --with cli if cli-common-dev is present
-WITH_CLI = 
 WITH_DOTNET = -DWITH_DOTNET=OFF
 ifneq (,$(wildcard /usr/share/perl5/Debian/Debhelper/Sequence/cli.pm))
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
-WITH_CLI = --with cli
+DH_ADDONS += --with cli
 WITH_DOTNET = -DWITH_DOTNET=ON
 endif
 endif
@@ -37,6 +39,13 @@ CONFIGURE_FLAGS += \
 		-DWITH_WEBKIT3=OFF
 endif
 
+ifeq (,$(filter python-libproxy,$(DO_PACKAGES)))
+CONFIGURE_FLAGS += -DWITH_PYTHON2=OFF
+endif
+ifeq (,$(filter python3-libproxy,$(DO_PACKAGES)))
+CONFIGURE_FLAGS += -DWITH_PYTHON3=OFF
+endif
+
 override_dh_auto_configure:
 	dh_auto_configure -- $(CONFIGURE_FLAGS)
 
@@ -60,4 +69,5 @@ override_dh_gencontrol:
 	dh_gencontrol -- -Vlibproxy=${libproxy}
 
 %:
-	dh $@ $(WITH_CLI) --with python2,python3,gnome
+	dh $@ $(DH_ADDONS)
+build binary %-indep: DH_ADDONS+=--with=python2,python3
