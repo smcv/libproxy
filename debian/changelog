@@ -1,3 +1,12 @@
+libproxy (0.4.15-3) unstable; urgency=medium
+
+  * Reintroduce libproxy1-plugin-mozjs, the module now builds with mozjs 52
+  * debian/control.in: Drop X-Python(3)-Version to please lintian
+  * debian/control.in: Bump Standards-Version to 4.2.1 (no further changes)
+  * debian/rules: Use DEB_VERSION_UPSTREAM instead of SHLIBVER for the helpers
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 06 Oct 2018 07:40:35 +0200
+
 libproxy (0.4.15-2) unstable; urgency=medium
 
   [ Helmut Grohne ]
