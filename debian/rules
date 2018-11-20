@@ -20,6 +20,12 @@ WITH_DOTNET = -DWITH_DOTNET=ON
 endif
 endif
 
+ifneq ($(filter amd64 arm64 armel armhf i386 mips mips64el mipsel ppc64el alpha hppa m68k powerpc powerpcspe sh4, $(DEB_HOST_ARCH)),)
+WITH_MOZJS = -DWITH_MOZJS=ON
+else
+WITH_MOZJS = -DWITH_MOZJS=OFF
+endif
+
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 CONFIGURE_FLAGS = $(WITH_DOTNET) \
@@ -33,7 +39,7 @@ CONFIGURE_FLAGS = $(WITH_DOTNET) \
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
 CONFIGURE_FLAGS += \
 		-DWITH_GNOME3=ON \
-		-DWITH_MOZJS=ON \
+		$(WITH_MOZJS) \
 		-DWITH_WEBKIT3=ON
 else
 CONFIGURE_FLAGS += \

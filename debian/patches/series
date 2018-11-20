@@ -1,2 +1,3 @@
 disable-pac-test.patch
 Build-with-mozjs-52.patch
+Build-with-mozjs-60.patch
