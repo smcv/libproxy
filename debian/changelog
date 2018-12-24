@@ -1,10 +1,10 @@
-libproxy (0.4.15-4) UNRELEASED; urgency=medium
+libproxy (0.4.15-4) unstable; urgency=medium
 
   * Build the mozjs plugin against mozjs 60 and limit the architectures where
     the package is built as mozjs 60 FTBFS on several architectures (Closes:
     #912940)
 
- -- Laurent Bigonville <bigon@debian.org>  Tue, 20 Nov 2018 09:36:08 +0100
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 24 Dec 2018 15:33:14 +0100
 
 libproxy (0.4.15-3) unstable; urgency=medium
 
