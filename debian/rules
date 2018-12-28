@@ -6,7 +6,7 @@ SHLIBVER := 0.4.14
 libproxy := $(shell sed -nr 's/^Package:[[:space:]]*(libproxy[0-9]+(v5)?)[[:space:]]*$$/\1/p' debian/control.in)
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs -Wl,--as-needed
 
 DO_PACKAGES = $(shell dh_listpackages)
 
