@@ -26,8 +26,6 @@ else
 WITH_MOZJS = -DWITH_MOZJS=OFF
 endif
 
-DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-
 CONFIGURE_FLAGS = $(WITH_DOTNET) \
 		-DWITH_VALA=ON \
 		-DGMCS_EXECUTABLE=/usr/bin/mono-csc \
