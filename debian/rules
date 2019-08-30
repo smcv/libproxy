@@ -27,6 +27,7 @@ WITH_MOZJS = -DWITH_MOZJS=OFF
 endif
 
 CONFIGURE_FLAGS = $(WITH_DOTNET) \
+		-DWITH_PYTHON2=OFF \
 		-DWITH_VALA=ON \
 		-DGMCS_EXECUTABLE=/usr/bin/mono-csc \
 		-DCMAKE_SKIP_RPATH=ON \
@@ -46,9 +47,6 @@ CONFIGURE_FLAGS += \
 		-DWITH_WEBKIT3=OFF
 endif
 
-ifeq (,$(filter python-libproxy,$(DO_PACKAGES)))
-CONFIGURE_FLAGS += -DWITH_PYTHON2=OFF
-endif
 ifeq (,$(filter python3-libproxy,$(DO_PACKAGES)))
 CONFIGURE_FLAGS += -DWITH_PYTHON3=OFF
 endif
@@ -62,7 +60,6 @@ override_dh_install-arch:
 	  debian/libproxy-dev/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/libproxy-sharp-*.pc
 
 override_dh_install-indep:
-	cp -a debian/tmp/usr/lib/$(shell pyversions -d) debian/tmp/usr/lib/python3
 	dh_install
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
 	sed -i 's!/usr/lib/mono/libproxy-sharp!/usr/lib/cli/libproxy-sharp-0.4!' \
@@ -77,4 +74,4 @@ override_dh_gencontrol:
 
 %:
 	dh $@ $(DH_ADDONS)
-build binary %-indep: DH_ADDONS+=--with=python2,python3
+build binary %-indep: DH_ADDONS+=--with=python3
