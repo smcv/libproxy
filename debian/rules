@@ -10,12 +10,9 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs -Wl,--as-needed
 
 DO_PACKAGES = $(shell dh_listpackages)
 
-# only invoke dh --with cli if cli-common-dev is present
 WITH_DOTNET = -DWITH_DOTNET=OFF
-ifneq (,$(wildcard /usr/share/perl5/Debian/Debhelper/Sequence/cli.pm))
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
 WITH_DOTNET = -DWITH_DOTNET=ON
-endif
 endif
 
 ifneq ($(filter amd64 arm64 armel armhf i386 mips mips64el mipsel ppc64el alpha hppa m68k powerpc powerpcspe sh4, $(DEB_HOST_ARCH)),)
