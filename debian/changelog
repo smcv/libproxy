@@ -1,3 +1,15 @@
+libproxy (0.4.15-6) unstable; urgency=medium
+
+  [ Andreas Henriksson ]
+  * Drop python-libproxy for python2 removal (Closes: #936906)
+  * Add patch to have cmake find python 3.7
+
+  [ Jeremy Bicha ]
+  * Build-Depend on debhelper-compat 12 and drop debian/compat
+  * Build-Depend on dh-sequence-cli, dh-sequence-gnome & dh-sequence-python3
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 06 Oct 2019 08:22:59 -0400
+
 libproxy (0.4.15-5) unstable; urgency=medium
 
   * Add -Wl,-O1 to our LDFLAGS
