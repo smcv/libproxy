@@ -10,12 +10,10 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs -Wl,--as-needed
 
 DO_PACKAGES = $(shell dh_listpackages)
 
-DH_ADDONS=--with=gnome
 # only invoke dh --with cli if cli-common-dev is present
 WITH_DOTNET = -DWITH_DOTNET=OFF
 ifneq (,$(wildcard /usr/share/perl5/Debian/Debhelper/Sequence/cli.pm))
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
-DH_ADDONS += --with cli
 WITH_DOTNET = -DWITH_DOTNET=ON
 endif
 endif
@@ -73,5 +71,4 @@ override_dh_gencontrol:
 	dh_gencontrol -- -Vlibproxy=${libproxy}
 
 %:
-	dh $@ $(DH_ADDONS)
-build binary %-indep: DH_ADDONS+=--with=python3
+	dh $@
