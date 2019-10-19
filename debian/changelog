@@ -1,3 +1,10 @@
+libproxy (0.4.15-8) unstable; urgency=medium
+
+  * Drop Build-Depends on dh-sequence-cli.
+    Thanks to Simon McVittie (Closes: #942119)
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 19 Oct 2019 19:37:24 -0400
+
 libproxy (0.4.15-7) unstable; urgency=medium
 
   * Move dh-sequence-cli & dh-sequence-python3 from Build-Depends-Indep
