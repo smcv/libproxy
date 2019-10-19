@@ -10,9 +10,12 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs -Wl,--as-needed
 
 DO_PACKAGES = $(shell dh_listpackages)
 
-WITH_DOTNET = -DWITH_DOTNET=OFF
-ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
+DH_ADDONS =
+ifneq ($(filter libproxy0.4-cil,$(DO_PACKAGES)),)
 WITH_DOTNET = -DWITH_DOTNET=ON
+DH_ADDONS += --with cli
+else
+WITH_DOTNET = -DWITH_DOTNET=OFF
 endif
 
 ifneq ($(filter amd64 arm64 armel armhf i386 mips mips64el mipsel ppc64el alpha hppa m68k powerpc powerpcspe sh4, $(DEB_HOST_ARCH)),)
@@ -68,4 +71,4 @@ override_dh_gencontrol:
 	dh_gencontrol -- -Vlibproxy=${libproxy}
 
 %:
-	dh $@
+	dh $@ $(DH_ADDONS)
