@@ -1,3 +1,10 @@
+libproxy (0.4.15-9) UNRELEASED; urgency=medium
+
+  * control, rules: Add dh-sequence-cli to BDI. Since 12.5, debhelper
+    supports this properly.
+
+ -- Iain Lane <laney@debian.org>  Tue, 05 Nov 2019 17:32:53 +0000
+
 libproxy (0.4.15-8) unstable; urgency=medium
 
   * Drop Build-Depends on dh-sequence-cli.
