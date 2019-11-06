@@ -10,10 +10,8 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs -Wl,--as-needed
 
 DO_PACKAGES = $(shell dh_listpackages)
 
-DH_ADDONS =
 ifneq ($(filter libproxy0.4-cil,$(DO_PACKAGES)),)
 WITH_DOTNET = -DWITH_DOTNET=ON
-DH_ADDONS += --with cli
 else
 WITH_DOTNET = -DWITH_DOTNET=OFF
 endif
@@ -70,5 +68,9 @@ override_dh_makeshlibs:
 override_dh_gencontrol:
 	dh_gencontrol -- -Vlibproxy=${libproxy}
 
+# this shouldn't be needed; remove when #944225 is fixed
+clean:
+	dh $@ --without=cli
+
 %:
-	dh $@ $(DH_ADDONS)
+	dh $@
