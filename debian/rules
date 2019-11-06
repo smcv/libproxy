@@ -68,5 +68,9 @@ override_dh_makeshlibs:
 override_dh_gencontrol:
 	dh_gencontrol -- -Vlibproxy=${libproxy}
 
+# this shouldn't be needed; remove when #944225 is fixed
+clean:
+	dh $@ --without=cli
+
 %:
 	dh $@
