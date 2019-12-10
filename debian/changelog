@@ -1,3 +1,11 @@
+libproxy (0.4.15-10) UNRELEASED; urgency=medium
+
+  * debian/test/build:
+    - Use the correct compiler for proposed autopkgtest cross-testing
+      support
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 10 Dec 2019 12:34:38 +0100
+
 libproxy (0.4.15-9) unstable; urgency=medium
 
   * control, rules: Add dh-sequence-cli to BDI. Since 12.5, debhelper is

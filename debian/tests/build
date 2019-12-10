@@ -7,6 +7,13 @@ set -e
 
 WORKDIR=$(mktemp -d)
 trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+
+if [ -n "${DEB_HOST_GNU_TYPE:-}" ]; then
+    CROSS_COMPILE="$DEB_HOST_GNU_TYPE-"
+else
+    CROSS_COMPILE=
+fi
+
 cd $WORKDIR
 cat <<EOF > build_test.c
 #include <proxy.h>
@@ -17,7 +24,7 @@ int main(int argc, char** argv) {
 }
 EOF
 
-gcc -o build_test build_test.c -lproxy
+${CROSS_COMPILE}gcc -o build_test build_test.c -lproxy
 echo "build: OK"
 [ -x build_test ]
 ./build_test
