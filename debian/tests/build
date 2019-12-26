@@ -26,7 +26,15 @@ int main(int argc, char** argv) {
 EOF
 
 "${CROSS_COMPILE}gcc" -o build_test build_test.c -lproxy
-echo "build: OK"
+echo "build (legacy): OK"
 [ -x build_test ]
 ./build_test
+echo "run: OK"
+
+# Deliberately word-splitting, that's how pkg-config works:
+# shellcheck disable=SC2046
+"${CROSS_COMPILE}gcc" -o build_test2 build_test.c $("${CROSS_COMPILE}pkg-config" --cflags --libs libproxy-1.0)
+echo "build (with pkg-config): OK"
+[ -x build_test2 ]
+./build_test2
 echo "run: OK"

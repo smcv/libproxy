@@ -8,6 +8,7 @@ libproxy (0.4.15-10) UNRELEASED; urgency=medium
   [ Simon McVittie ]
   * d/tests/build: Mark as superficial
   * d/tests/build: Fix shellcheck warnings
+  * d/tests/build: Exercise linking with pkg-config
 
  -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 10 Dec 2019 12:34:38 +0100
 
