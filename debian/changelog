@@ -1,8 +1,12 @@
 libproxy (0.4.15-10) UNRELEASED; urgency=medium
 
+  [ Sebastien Bacher ]
   * debian/test/build:
     - Use the correct compiler for proposed autopkgtest cross-testing
       support
+
+  [ Simon McVittie ]
+  * d/tests/build: Mark as superficial
 
  -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 10 Dec 2019 12:34:38 +0100
 
