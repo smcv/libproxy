@@ -1,4 +1,4 @@
 disable-pac-test.patch
 Build-with-mozjs-52.patch
-Build-with-mozjs-60.patch
 python-support-Python-3.9.patch
+mozjs-Port-to-mozjs-68.patch
