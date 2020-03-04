@@ -1,4 +1,4 @@
 disable-pac-test.patch
 Build-with-mozjs-52.patch
 Build-with-mozjs-60.patch
-cmake-python3.7.patch
+python-support-Python-3.9.patch

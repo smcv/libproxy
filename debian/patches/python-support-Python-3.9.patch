@@ -1,0 +1,24 @@
+From: David King <amigadave@amigadave.com>
+Date: Thu, 13 Feb 2020 12:24:17 +0000
+Subject: python: support Python 3.9
+
+Add 3.9 to the list of accepted Python 3 versions.
+
+Origin: upstream, commit:869307ba7547cadef4a131581c3afdcaaec8c576
+---
+ cmake/FindPython3Interp.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cmake/FindPython3Interp.cmake b/cmake/FindPython3Interp.cmake
+index c6cbe3d..74398b2 100644
+--- a/cmake/FindPython3Interp.cmake
++++ b/cmake/FindPython3Interp.cmake
+@@ -39,7 +39,7 @@
+ 
+ unset(_Python3_NAMES)
+ 
+-set(_Python3_VERSIONS 3.6 3.5 3.4 3.3 3.2 3.1 3.0)
++set(_Python3_VERSIONS 3.9 3.8 3.7 3.6 3.5 3.4 3.3 3.2 3.1 3.0)
+ 
+ if(Python3Interp_FIND_VERSION)
+     if(Python3Interp_FIND_VERSION_COUNT GREATER 1)
