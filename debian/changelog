@@ -10,7 +10,15 @@ libproxy (0.4.15-10) UNRELEASED; urgency=medium
   * d/tests/build: Fix shellcheck warnings
   * d/tests/build: Exercise linking with pkg-config
 
- -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 10 Dec 2019 12:34:38 +0100
+  [ Iain Lane ]
+  * Revert "rules: Don't run the cli sequence in the clean target". The
+    associated debhelper bug (#944225) is fixed.  This reverts commit
+    7251356feb950abaa137ac5a4d5ead7f954d388e.
+  * python-support-Python-3.9.patch: Cherry-pick patch to support newer
+    python3
+  * control, mozjs-Port-to-mozjs-68.patch: Move to mozjs68
+
+ -- Iain Lane <laney@debian.org>  Wed, 04 Mar 2020 09:47:15 +0000
 
 libproxy (0.4.15-9) unstable; urgency=medium
 
