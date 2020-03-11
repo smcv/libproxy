@@ -1,4 +1,4 @@
-libproxy (0.4.15-10) UNRELEASED; urgency=medium
+libproxy (0.4.15-10) experimental; urgency=medium
 
   [ Sebastien Bacher ]
   * debian/test/build:
@@ -18,7 +18,7 @@ libproxy (0.4.15-10) UNRELEASED; urgency=medium
     python3
   * control, mozjs-Port-to-mozjs-68.patch: Move to mozjs68
 
- -- Iain Lane <laney@debian.org>  Wed, 04 Mar 2020 09:47:15 +0000
+ -- Iain Lane <laney@debian.org>  Wed, 11 Mar 2020 13:16:18 +0000
 
 libproxy (0.4.15-9) unstable; urgency=medium
 
