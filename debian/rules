@@ -68,7 +68,7 @@ ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
 endif
 
 override_dh_makeshlibs:
-	dh_makeshlibs '$(libproxy) (>= $(SHLIBVER))' -- -c4
+	dh_makeshlibs -- -c4
 
 override_dh_gencontrol:
 	dh_gencontrol -- -Vlibproxy=${libproxy}
