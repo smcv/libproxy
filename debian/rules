@@ -44,6 +44,10 @@ CONFIGURE_FLAGS += \
 		-DWITH_WEBKIT3=OFF
 endif
 
+ifeq (,$(filter libnet-libproxy-perl,$(DO_PACKAGES)))
+CONFIGURE_FLAGS += -DWITH_PERL=OFF
+endif
+
 ifeq (,$(filter python3-libproxy,$(DO_PACKAGES)))
 CONFIGURE_FLAGS += -DWITH_PYTHON3=OFF
 endif
