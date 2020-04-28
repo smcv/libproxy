@@ -1,3 +1,7 @@
 Tests: build
 Restrictions: superficial
 Depends: build-essential, libproxy-dev, pkg-config
+
+Tests: libproxy-tools
+Restrictions: allow-stderr superficial
+Depends: libproxy-tools
