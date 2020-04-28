@@ -2,3 +2,4 @@ disable-pac-test.patch
 Build-with-mozjs-52.patch
 python-support-Python-3.9.patch
 mozjs-Port-to-mozjs-68.patch
+pxgsettings-use-the-correct-syntax-to-connect-to-the-chan.patch
