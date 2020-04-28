@@ -5,3 +5,7 @@ Depends: build-essential, libproxy-dev, pkg-config
 Tests: libproxy-tools
 Restrictions: allow-stderr superficial
 Depends: libproxy-tools
+
+Tests: python3
+Restrictions: allow-stderr flaky superficial
+Depends: python3-libproxy
