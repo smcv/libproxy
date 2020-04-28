@@ -1,3 +1,11 @@
+libproxy (0.4.15-11) unstable; urgency=medium
+
+  * Bump debhelper-compat to 13
+  * Bump Standards-Version to 4.5.0
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 27 Apr 2020 21:25:44 -0400
+
 libproxy (0.4.15-10) experimental; urgency=medium
 
   [ Sebastien Bacher ]
