@@ -1,7 +1,16 @@
+libproxy (0.4.15-12) UNRELEASED; urgency=medium
+
+  * Add undocumented changes to previous changelog entry
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 28 Apr 2020 09:20:23 +0100
+
 libproxy (0.4.15-11) unstable; urgency=medium
 
   * Bump debhelper-compat to 13
+    - Stop passing -V to dh_makeshlibs, it is the default now
   * Bump Standards-Version to 4.5.0
+  * d/rules: Remove redundant -Wl,--as-needed.
+    bullseye toolchains already default to this.
   * Release to unstable
 
  -- Jeremy Bicha <jbicha@debian.org>  Mon, 27 Apr 2020 21:25:44 -0400
