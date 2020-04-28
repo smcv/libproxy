@@ -23,7 +23,7 @@ Build-Depends: debhelper-compat (= 13),
                libjavascriptcoregtk-4.0-dev <!stage1>,
                libglib2.0-dev (>= 2.26) <!stage1>,
                libxmu-dev <!stage1>
-Standards-Version: 4.3.0
+Standards-Version: 4.5.0
 Vcs-Browser: https://salsa.debian.org/gnome-team/libproxy
 Vcs-Git: https://salsa.debian.org/gnome-team/libproxy.git
 Homepage: https://libproxy.github.io/libproxy/
